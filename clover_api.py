@@ -90,9 +90,3 @@ def successful_payment_processing():
     # goto the home page
     welcome()
 
-
-if __name__ == '__main__':
-    # successful_payment_processing()
-    # error_payment_processing()
-    # show_message()
-    success()
