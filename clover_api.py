@@ -90,3 +90,4 @@ def successful_payment_processing():
     # goto the home page
     welcome()
 
+print("test")
