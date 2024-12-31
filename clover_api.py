@@ -80,6 +80,35 @@ def payment():
     print(response.text)
 
 
+def get_tip():
+    url = BASE_URL + "/device/read-tip"
+
+    payload = {
+        "baseAmount": 5,
+        "tipSuggestions": [
+            {
+                "percentage": 15,
+            },
+            {
+                "percentage": 18
+            },
+            {
+                "percentage": 22
+            }
+        ]
+    }
+    headers = HEADERS
+
+    additional_headers = {
+        "content-type": "application/json",
+    }
+    headers.update(additional_headers)
+
+    response = requests.post(url, json=payload, headers=headers)
+
+    print(response.text)
+
+
 def successful_payment_processing():
     # go to the home page
     welcome()
@@ -88,5 +117,3 @@ def successful_payment_processing():
     # success
     success()
     # goto the home page
-    welcome()
-
